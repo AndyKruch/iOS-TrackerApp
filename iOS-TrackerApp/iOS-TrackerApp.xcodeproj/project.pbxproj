@@ -19,9 +19,9 @@
 		310FE8122A77BD2B00753F08 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310FE8112A77BD2B00753F08 /* UIStackViewExtension.swift */; };
 		310FE8142A77BE1800753F08 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310FE8132A77BE1800753F08 /* Emoji.swift */; };
 		310FE8162A77BEBF00753F08 /* PreviewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310FE8152A77BEBF00753F08 /* PreviewUI.swift */; };
+		316EFE122A77CE2800AAB29C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316EFE112A77CE2800AAB29C /* TabBarViewController.swift */; };
 		31D6BF522A72D9D1001BFEE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6BF512A72D9D1001BFEE8 /* AppDelegate.swift */; };
 		31D6BF542A72D9D1001BFEE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6BF532A72D9D1001BFEE8 /* SceneDelegate.swift */; };
-		31D6BF562A72D9D1001BFEE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6BF552A72D9D1001BFEE8 /* ViewController.swift */; };
 		31D6BF5B2A72D9D2001BFEE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31D6BF5A2A72D9D2001BFEE8 /* Assets.xcassets */; };
 		31D6BF5E2A72D9D2001BFEE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D6BF5C2A72D9D2001BFEE8 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -39,10 +39,10 @@
 		310FE8112A77BD2B00753F08 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
 		310FE8132A77BE1800753F08 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		310FE8152A77BEBF00753F08 /* PreviewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewUI.swift; sourceTree = "<group>"; };
+		316EFE112A77CE2800AAB29C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		31D6BF4E2A72D9D1001BFEE8 /* iOS-TrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-TrackerApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D6BF512A72D9D1001BFEE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31D6BF532A72D9D1001BFEE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		31D6BF552A72D9D1001BFEE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		31D6BF5A2A72D9D2001BFEE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31D6BF5D2A72D9D2001BFEE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31D6BF5F2A72D9D2001BFEE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,6 +109,7 @@
 		310FE7FD2A77AD3900753F08 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				316EFE112A77CE2800AAB29C /* TabBarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -140,7 +141,6 @@
 				310FE7F82A77AC6100753F08 /* Cells */,
 				31D6BF512A72D9D1001BFEE8 /* AppDelegate.swift */,
 				31D6BF532A72D9D1001BFEE8 /* SceneDelegate.swift */,
-				31D6BF552A72D9D1001BFEE8 /* ViewController.swift */,
 				31D6BF5C2A72D9D2001BFEE8 /* LaunchScreen.storyboard */,
 				31D6BF5A2A72D9D2001BFEE8 /* Assets.xcassets */,
 				31D6BF5F2A72D9D2001BFEE8 /* Info.plist */,
@@ -218,13 +218,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				316EFE122A77CE2800AAB29C /* TabBarViewController.swift in Sources */,
 				310FE80E2A77BA2700753F08 /* UICollectionViewExtension.swift in Sources */,
 				310FE8032A77B54500753F08 /* TrackerCategory.swift in Sources */,
 				310FE80B2A77B7F200753F08 /* DateExtension.swift in Sources */,
 				310FE7FF2A77AD9400753F08 /* ItemsList.swift in Sources */,
 				310FE8142A77BE1800753F08 /* Emoji.swift in Sources */,
 				310FE8102A77BB0400753F08 /* UILabelExtension.swift in Sources */,
-				31D6BF562A72D9D1001BFEE8 /* ViewController.swift in Sources */,
 				310FE8092A77B6BF00753F08 /* UIColorExtensions.swift in Sources */,
 				310FE8052A77B56700753F08 /* TrackerRecord.swift in Sources */,
 				310FE8122A77BD2B00753F08 /* UIStackViewExtension.swift in Sources */,
