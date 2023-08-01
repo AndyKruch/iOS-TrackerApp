@@ -5,8 +5,6 @@
 //  Created by Andy Kruch on 31.07.23.
 //
 
-import Foundation
-
 import UIKit
 
 extension UIColor {
@@ -24,23 +22,23 @@ extension UIColor {
     static var LightGray: UIColor { UIColor(named: "Light Gray") ?? UIColor.lightGray }
     
     static let bunchOfSChoices = [
-        UIColor(named: "Color Selection 1")!,
-        UIColor(named: "Color Selection 2")!,
-        UIColor(named: "Color Selection 3")!,
-        UIColor(named: "Color Selection 4")!,
-        UIColor(named: "Color Selection 5")!,
-        UIColor(named: "Color Selection 6")!,
-        UIColor(named: "Color Selection 7")!,
-        UIColor(named: "Color Selection 8")!,
-        UIColor(named: "Color Selection 9")!,
-        UIColor(named: "Color Selection 10")!,
-        UIColor(named: "Color Selection 11")!,
-        UIColor(named: "Color Selection 12")!,
-        UIColor(named: "Color Selection 13")!,
-        UIColor(named: "Color Selection 14")!,
-        UIColor(named: "Color Selection 15")!,
-        UIColor(named: "Color Selection 16")!,
-        UIColor(named: "Color Selection 17")!,
-        UIColor(named: "Color Selection 18")!
+        UIColor(named: "Color selection 1") ?? UIColor.black,
+        UIColor(named: "Color selection 2") ?? UIColor.black,
+        UIColor(named: "Color selection 3") ?? UIColor.black,
+        UIColor(named: "Color selection 4") ?? UIColor.black,
+        UIColor(named: "Color selection 5") ?? UIColor.black,
+        UIColor(named: "Color selection 6") ?? UIColor.black,
+        UIColor(named: "Color selection 7") ?? UIColor.black,
+        UIColor(named: "Color selection 8") ?? UIColor.black,
+        UIColor(named: "Color selection 9") ?? UIColor.black,
+        UIColor(named: "Color selection 10") ?? UIColor.black,
+        UIColor(named: "Color selection 11") ?? UIColor.black,
+        UIColor(named: "Color selection 12") ?? UIColor.black,
+        UIColor(named: "Color selection 13") ?? UIColor.black,
+        UIColor(named: "Color selection 14") ?? UIColor.black,
+        UIColor(named: "Color selection 15") ?? UIColor.black,
+        UIColor(named: "Color selection 16") ?? UIColor.black,
+        UIColor(named: "Color selection 17") ?? UIColor.black,
+        UIColor(named: "Color selection 18") ?? UIColor.black
     ]
 }

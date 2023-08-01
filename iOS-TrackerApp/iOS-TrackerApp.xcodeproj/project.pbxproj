@@ -18,7 +18,15 @@
 		310FE8102A77BB0400753F08 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310FE80F2A77BB0400753F08 /* UILabelExtension.swift */; };
 		310FE8122A77BD2B00753F08 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310FE8112A77BD2B00753F08 /* UIStackViewExtension.swift */; };
 		310FE8142A77BE1800753F08 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310FE8132A77BE1800753F08 /* Emoji.swift */; };
-		310FE8162A77BEBF00753F08 /* PreviewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310FE8152A77BEBF00753F08 /* PreviewUI.swift */; };
+		312821D72A78F889008400BB /* TrackerCategoryNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821D62A78F889008400BB /* TrackerCategoryNames.swift */; };
+		312821D92A78F892008400BB /* TrackerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821D82A78F892008400BB /* TrackerTextField.swift */; };
+		312821DB2A78F89C008400BB /* TrackerCategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821DA2A78F89C008400BB /* TrackerCategoryExtension.swift */; };
+		312821DF2A78F8AB008400BB /* TrackerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821DC2A78F8AB008400BB /* TrackerFormViewController.swift */; };
+		312821E02A78F8AB008400BB /* ScheduleViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821DD2A78F8AB008400BB /* ScheduleViewControllerDelegate.swift */; };
+		312821E12A78F8AB008400BB /* SetTrackersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821DE2A78F8AB008400BB /* SetTrackersViewController.swift */; };
+		312821E52A78F8BE008400BB /* ListCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821E22A78F8BE008400BB /* ListCells.swift */; };
+		312821E62A78F8BE008400BB /* TrackerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821E32A78F8BE008400BB /* TrackerCell.swift */; };
+		312821E72A78F8BE008400BB /* WeekdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821E42A78F8BE008400BB /* WeekdayCell.swift */; };
 		316EFE122A77CE2800AAB29C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316EFE112A77CE2800AAB29C /* TabBarViewController.swift */; };
 		316EFE142A77E88500AAB29C /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316EFE132A77E88500AAB29C /* StatisticsViewController.swift */; };
 		316EFE162A77E9BA00AAB29C /* TrackersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316EFE152A77E9BA00AAB29C /* TrackersViewController.swift */; };
@@ -40,7 +48,15 @@
 		310FE80F2A77BB0400753F08 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		310FE8112A77BD2B00753F08 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
 		310FE8132A77BE1800753F08 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
-		310FE8152A77BEBF00753F08 /* PreviewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewUI.swift; sourceTree = "<group>"; };
+		312821D62A78F889008400BB /* TrackerCategoryNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerCategoryNames.swift; sourceTree = "<group>"; };
+		312821D82A78F892008400BB /* TrackerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerTextField.swift; sourceTree = "<group>"; };
+		312821DA2A78F89C008400BB /* TrackerCategoryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerCategoryExtension.swift; sourceTree = "<group>"; };
+		312821DC2A78F8AB008400BB /* TrackerFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerFormViewController.swift; sourceTree = "<group>"; };
+		312821DD2A78F8AB008400BB /* ScheduleViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewControllerDelegate.swift; sourceTree = "<group>"; };
+		312821DE2A78F8AB008400BB /* SetTrackersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTrackersViewController.swift; sourceTree = "<group>"; };
+		312821E22A78F8BE008400BB /* ListCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCells.swift; sourceTree = "<group>"; };
+		312821E32A78F8BE008400BB /* TrackerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerCell.swift; sourceTree = "<group>"; };
+		312821E42A78F8BE008400BB /* WeekdayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekdayCell.swift; sourceTree = "<group>"; };
 		316EFE112A77CE2800AAB29C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		316EFE132A77E88500AAB29C /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		316EFE152A77E9BA00AAB29C /* TrackersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackersViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +82,9 @@
 		310FE7F82A77AC6100753F08 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				312821E22A78F8BE008400BB /* ListCells.swift */,
+				312821E32A78F8BE008400BB /* TrackerCell.swift */,
+				312821E42A78F8BE008400BB /* WeekdayCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -73,6 +92,7 @@
 		310FE7F92A77AC6A00753F08 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				312821DA2A78F89C008400BB /* TrackerCategoryExtension.swift */,
 				310FE8082A77B6BF00753F08 /* UIColorExtensions.swift */,
 				310FE80A2A77B7F200753F08 /* DateExtension.swift */,
 				310FE80D2A77BA2700753F08 /* UICollectionViewExtension.swift */,
@@ -86,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				310FE8132A77BE1800753F08 /* Emoji.swift */,
-				310FE8152A77BEBF00753F08 /* PreviewUI.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -94,6 +113,8 @@
 		310FE7FB2A77ACAA00753F08 /* Trackers */ = {
 			isa = PBXGroup;
 			children = (
+				312821D82A78F892008400BB /* TrackerTextField.swift */,
+				312821D62A78F889008400BB /* TrackerCategoryNames.swift */,
 			);
 			path = Trackers;
 			sourceTree = "<group>";
@@ -113,6 +134,9 @@
 		310FE7FD2A77AD3900753F08 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				312821DD2A78F8AB008400BB /* ScheduleViewControllerDelegate.swift */,
+				312821DE2A78F8AB008400BB /* SetTrackersViewController.swift */,
+				312821DC2A78F8AB008400BB /* TrackerFormViewController.swift */,
 				316EFE112A77CE2800AAB29C /* TabBarViewController.swift */,
 				316EFE132A77E88500AAB29C /* StatisticsViewController.swift */,
 				316EFE152A77E9BA00AAB29C /* TrackersViewController.swift */,
@@ -226,20 +250,28 @@
 			files = (
 				316EFE122A77CE2800AAB29C /* TabBarViewController.swift in Sources */,
 				310FE80E2A77BA2700753F08 /* UICollectionViewExtension.swift in Sources */,
+				312821E02A78F8AB008400BB /* ScheduleViewControllerDelegate.swift in Sources */,
 				310FE8032A77B54500753F08 /* TrackerCategory.swift in Sources */,
+				312821D92A78F892008400BB /* TrackerTextField.swift in Sources */,
 				316EFE142A77E88500AAB29C /* StatisticsViewController.swift in Sources */,
 				310FE80B2A77B7F200753F08 /* DateExtension.swift in Sources */,
 				310FE7FF2A77AD9400753F08 /* ItemsList.swift in Sources */,
+				312821E12A78F8AB008400BB /* SetTrackersViewController.swift in Sources */,
 				310FE8142A77BE1800753F08 /* Emoji.swift in Sources */,
 				316EFE162A77E9BA00AAB29C /* TrackersViewController.swift in Sources */,
 				310FE8102A77BB0400753F08 /* UILabelExtension.swift in Sources */,
 				310FE8092A77B6BF00753F08 /* UIColorExtensions.swift in Sources */,
+				312821DF2A78F8AB008400BB /* TrackerFormViewController.swift in Sources */,
 				310FE8052A77B56700753F08 /* TrackerRecord.swift in Sources */,
+				312821E62A78F8BE008400BB /* TrackerCell.swift in Sources */,
+				312821DB2A78F89C008400BB /* TrackerCategoryExtension.swift in Sources */,
 				310FE8122A77BD2B00753F08 /* UIStackViewExtension.swift in Sources */,
+				312821E52A78F8BE008400BB /* ListCells.swift in Sources */,
 				310FE8012A77B50800753F08 /* Tracker.swift in Sources */,
+				312821D72A78F889008400BB /* TrackerCategoryNames.swift in Sources */,
 				31D6BF522A72D9D1001BFEE8 /* AppDelegate.swift in Sources */,
-				310FE8162A77BEBF00753F08 /* PreviewUI.swift in Sources */,
 				310FE8072A77B59600753F08 /* Weekdays.swift in Sources */,
+				312821E72A78F8BE008400BB /* WeekdayCell.swift in Sources */,
 				31D6BF542A72D9D1001BFEE8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +416,6 @@
 				INFOPLIST_FILE = "iOS-TrackerApp/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
@@ -416,7 +447,6 @@
 				INFOPLIST_FILE = "iOS-TrackerApp/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
