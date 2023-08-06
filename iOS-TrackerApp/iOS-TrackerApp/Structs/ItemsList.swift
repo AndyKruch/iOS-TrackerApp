@@ -46,7 +46,7 @@ final class ListOfItems: UIView {
         }
     }
 }
-// MARK: - EXTENSIONS
+
 //MARK: - Layout methods
 extension ListOfItems {
     private func setupView() {

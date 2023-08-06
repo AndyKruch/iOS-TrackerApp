@@ -94,7 +94,7 @@ final class TrackerCell: UICollectionViewCell {
         self.days = days
         cardView.backgroundColor = tracker.color
         emoji.text = tracker.emoji
-        trackerLabel.text = tracker.label
+        trackerLabel.text = tracker.title
         addDayButton.backgroundColor = tracker.color
         switchAddDayButton(to: isCompleted)
     }

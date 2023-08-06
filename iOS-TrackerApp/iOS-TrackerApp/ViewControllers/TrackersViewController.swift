@@ -97,7 +97,7 @@ final class TrackersViewController: UIViewController {
                 result.append(TrackerCategory(label: category.label, trackers: trackersByDay))
             } else {
                 let filteredTrackers = trackersByDay.filter { tracker in
-                    tracker.label.lowercased().contains(searchText.lowercased())
+                    tracker.title.lowercased().contains(searchText.lowercased())
                 }
                 
                 if !filteredTrackers.isEmpty {

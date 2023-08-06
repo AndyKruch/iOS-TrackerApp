@@ -58,10 +58,6 @@ final class ListCell: UITableViewCell {
     func configure(label: String, value: String?, position: ListOfItems.Position) {
         listItem.configure(with: position)
         nameLabel.text = label
-        
-        if let value {
-            valueLabel.text = value
-        }
     }
 }
 
@@ -78,7 +74,6 @@ private extension ListCell {
         labelsStack.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
-
     }
     
     func configureConstraints() {

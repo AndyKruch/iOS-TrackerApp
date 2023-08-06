@@ -21,6 +21,7 @@ final class ScheduleViewController: UIViewController {
         table.isScrollEnabled = false
         return table
     }()
+    
     private lazy var confirmButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .BlackDay

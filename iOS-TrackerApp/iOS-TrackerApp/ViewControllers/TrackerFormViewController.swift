@@ -234,7 +234,6 @@ import UIKit
          validationMessage.translatesAutoresizingMaskIntoConstraints = false
          parametersTableView.translatesAutoresizingMaskIntoConstraints = false
          buttonsStack.translatesAutoresizingMaskIntoConstraints = false
-
      }
 
      func configureConstraints() {

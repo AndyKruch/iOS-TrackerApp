@@ -45,10 +45,8 @@ final class StatisticViewController: UIViewController {
         configureViews()
         configureConstraints()
     }
-    
 }
 
-// MARK: - EXTENSIONS
 // MARK: - Layout methods
 private extension StatisticViewController {
     func configureViews() {
@@ -61,7 +59,6 @@ private extension StatisticViewController {
         emptyImageView.translatesAutoresizingMaskIntoConstraints = false
         emptyLabel.translatesAutoresizingMaskIntoConstraints = false
         emptyStack.translatesAutoresizingMaskIntoConstraints = false
-
     }
     
     func configureConstraints() {
@@ -73,4 +70,3 @@ private extension StatisticViewController {
         ])
     }
 }
-
