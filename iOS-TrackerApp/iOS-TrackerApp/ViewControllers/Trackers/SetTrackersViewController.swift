@@ -98,6 +98,7 @@ private extension SetTrackersViewController {
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
+        
     }
     
     func configureConstraints() {

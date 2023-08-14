@@ -72,6 +72,7 @@ final class TrackersViewController: UIViewController {
     
     //MARK: - Properties
     
+    
     private let mainSpacePlaceholderStack = UIStackView()
     private let searchSpacePlaceholderStack = UIStackView()
     private let trackerLabel = UILabel()
@@ -130,7 +131,18 @@ final class TrackersViewController: UIViewController {
         checkPlaceholderVisabilityAfterSearch()
     }
     
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        super.touchesBegan(touches,
+//                           with: event)
+//        self.view.endEditing(true)
+//    }
+    
     // MARK: - Actions
+    @objc
+    private func hideKeyboard() {
+        self.view.endEditing(true)
+    }
+    
     @objc
     private func didTapPlusButton() {
         
@@ -157,6 +169,14 @@ final class TrackersViewController: UIViewController {
         let isHidden = visibleCategories.isEmpty && searchBar.text != ""
         searchSpacePlaceholderStack.isHidden = !isHidden
     }
+    
+    private func hideKeybordWithTap() {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                                                action: #selector(hideKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
 }
 // MARK: - EXTENSIONS
 //MARK: - Layout methods
@@ -331,6 +351,7 @@ extension TrackersViewController: TrackerFormViewControllerDelegate {
 extension TrackersViewController: UISearchBarDelegate {
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         checkPlaceholderVisabilityAfterSearch()
+        hideKeybordWithTap()
         searchBar.setShowsCancelButton(true, animated: true)
         return true
     }
@@ -339,6 +360,8 @@ extension TrackersViewController: UISearchBarDelegate {
         self.searchText = searchText
         collectionView.reloadData()
         checkPlaceholderVisabilityAfterSearch()
+        hideKeybordWithTap()
+        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -349,6 +372,7 @@ extension TrackersViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         collectionView.reloadData()
         checkPlaceholderVisabilityAfterSearch()
+        hideKeybordWithTap()
     }
 }
 // MARK: - TrackerCellDelegate
