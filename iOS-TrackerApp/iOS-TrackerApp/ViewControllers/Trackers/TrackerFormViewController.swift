@@ -102,6 +102,7 @@ final class TrackerFormViewController: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
+        scroll.keyboardDismissMode = .onDrag
         return scroll
     }()
     
