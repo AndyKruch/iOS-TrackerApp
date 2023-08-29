@@ -146,11 +146,7 @@ final class TrackersViewController: UIViewController {
     }
     
     private func checkNumberOfTrackers() {
-        if trackerStore.numberOfTrackers == 0 {
-            filterButton.isHidden = true
-        } else {
-            filterButton.isHidden = false
-        }
+        filterButton.isHidden = trackerStore.numberOfTrackers == 0
     }
 }
 // MARK: - EXTENSIONS
