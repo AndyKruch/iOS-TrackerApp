@@ -24,7 +24,7 @@ final class WeekdayCell: UITableViewCell {
     
     private lazy var switchView: UISwitch = {
         let switchView = UISwitch()
-        switchView.onTintColor = .blue
+        switchView.onTintColor = .Blue
         switchView.addTarget(self, action: #selector(didToggleSwitchView), for: .valueChanged)
         return switchView
     }()

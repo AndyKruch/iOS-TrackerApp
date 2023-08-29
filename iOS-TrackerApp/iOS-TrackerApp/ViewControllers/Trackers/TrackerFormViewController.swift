@@ -160,7 +160,7 @@ final class TrackerFormViewController: UIViewController {
     private let parameters = ["Категория", "Расписание"]
     private let emojis = emojisArray
     private let colors = UIColor.bunchOfSChoices
-    private let geometry = UICollectionView.GeometricParams(cellCount: 6, leftInset: 28, rightInset: 28, topInset: 24, bottomInset: 24, height: 52, cellSpacing: 5)
+    private let params = UICollectionView.GeometricParams(cellCount: 6, leftInset: 28, rightInset: 28, topInset: 24, bottomInset: 24, height: 52, cellSpacing: 5)
     
     // MARK: - Lifecycle
     init(type: SetTrackersViewController.TrackerType, data: Tracker.Data = Tracker.Data()) {
@@ -298,7 +298,7 @@ private extension TrackerFormViewController {
     
     func configureConstraints() {
         validationMessageHeightConstraint = validationMessage.heightAnchor.constraint(equalToConstant: 0)
-        parametersTableViewTopConstraint = parametersTableView.topAnchor.constraint(equalTo: validationMessage.bottomAnchor, constant: 16)
+        parametersTableViewTopConstraint = parametersTableView.topAnchor.constraint(equalTo: validationMessage.bottomAnchor, constant: 4)
         validationMessageHeightConstraint?.isActive = true
         parametersTableViewTopConstraint?.isActive = true
         
@@ -324,12 +324,12 @@ private extension TrackerFormViewController {
             emojisCollection.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             emojisCollection.topAnchor.constraint(equalTo: parametersTableView.bottomAnchor, constant: 32),
             emojisCollection.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            emojisCollection.heightAnchor.constraint(equalToConstant: CGFloat(emojis.count) / geometry.cellCount * geometry.height + 18 + geometry.topInset + geometry.bottomInset),
+            emojisCollection.heightAnchor.constraint(equalToConstant: CGFloat(emojis.count) / params.cellCount * params.height + 18 + params.topInset + params.bottomInset),
             colorsCollection.leadingAnchor.constraint(equalTo: emojisCollection.leadingAnchor),
             colorsCollection.topAnchor.constraint(equalTo: emojisCollection.bottomAnchor, constant: 16),
             colorsCollection.trailingAnchor.constraint(equalTo: emojisCollection.trailingAnchor),
             colorsCollection.heightAnchor.constraint(
-                equalToConstant: CGFloat(colors.count) / geometry.cellCount * geometry.height + 18 + geometry.topInset + geometry.bottomInset
+                equalToConstant: CGFloat(colors.count) / params.cellCount * params.height + 18 + params.topInset + params.bottomInset
             ),
             buttonsStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             buttonsStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
@@ -447,9 +447,9 @@ extension TrackerFormViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let availableSpace = collectionView.frame.width - geometry.paddingWidth
-        let cellWidth = availableSpace / geometry.cellCount
-        return CGSize(width: cellWidth, height: geometry.height)
+        let availableSpace = collectionView.frame.width - params.paddingWidth
+        let cellWidth = availableSpace / params.cellCount
+        return CGSize(width: cellWidth, height: params.height)
     }
     
     func collectionView(
@@ -458,15 +458,15 @@ extension TrackerFormViewController: UICollectionViewDelegateFlowLayout {
         insetForSectionAt section: Int) -> UIEdgeInsets
     {
         UIEdgeInsets(
-            top: geometry.topInset,
-            left: geometry.leftInset,
-            bottom: geometry.bottomInset,
-            right: geometry.rightInset
+            top: params.topInset,
+            left: params.leftInset,
+            bottom: params.bottomInset,
+            right: params.rightInset
         )
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        geometry.cellSpacing
+        params.cellSpacing
     }
     
     func collectionView(

@@ -66,7 +66,7 @@ final class TrackersViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         button.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         button.layer.cornerRadius = 16
-        button.backgroundColor = .blue
+        button.backgroundColor = .Blue
         return button
     }()
     
