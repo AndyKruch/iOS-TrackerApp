@@ -10,7 +10,7 @@ import UIKit
 
 extension UIStackView {
     
-    func configurePlaceholderStack(imageName: String, text: String){
+    func configurePlaceholderStack(imageName: String, text: String) {
         self.contentMode = .scaleAspectFit
         self.layer.masksToBounds = true
         let imageView = UIImageView(image: UIImage(named: imageName))
