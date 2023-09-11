@@ -10,12 +10,38 @@ import Foundation
 import UIKit
 import CoreData
 
+protocol TrackerCategoryStoreDelegate: AnyObject {
+    func didUpdate()
+}
+
 final class TrackerCategoryStore: NSObject {
     // MARK: - Properties
+    
+    weak var delegate: TrackerCategoryStoreDelegate?
+    var categoriesCoreData: [TrackerCategoryCoreData] {
+        fetchedResultsController.fetchedObjects ?? []
+    }
+    
     var categories = [TrackerCategory]()
     
     private let context: NSManagedObjectContext
-
+    
+    private lazy var fetchedResultsController: NSFetchedResultsController<TrackerCategoryCoreData> = {
+        let fetchRequest = NSFetchRequest<TrackerCategoryCoreData>(entityName: "TrackerCategoryCoreData")
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(keyPath: \TrackerCategoryCoreData.createdAt, ascending: true)
+        ]
+        let fetchedResultsController = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: context,
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        )
+        fetchedResultsController.delegate = self
+        try? fetchedResultsController.performFetch()
+        return fetchedResultsController
+    }()
+    
     // MARK: - Lifecycle
     convenience override init() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -37,7 +63,7 @@ final class TrackerCategoryStore: NSObject {
         return category[0]
     }
     
-    private func makeCategory(from coreData: TrackerCategoryCoreData) throws -> TrackerCategory {
+    func makeCategory(from coreData: TrackerCategoryCoreData) throws -> TrackerCategory {
         guard
             let idString = coreData.categoryId,
             let id = UUID(uuidString: idString),
@@ -56,9 +82,12 @@ final class TrackerCategoryStore: NSObject {
         }
         
         let _ = [
-            TrackerCategory(label: "Спорт"),
-            TrackerCategory(label: "Учеба"),
-            TrackerCategory(label: "Важное")
+            TrackerCategory(label: "Домашний уют"),
+            TrackerCategory(label: "Радостные мелочи"),
+            TrackerCategory(label: "Самочувствие"),
+            TrackerCategory(label: "Важное"),
+            TrackerCategory(label: "Привычки"),
+            TrackerCategory(label: "Спорт")
         ].map { category in
             let categoryCoreData = TrackerCategoryCoreData(context: context)
             categoryCoreData.categoryId = category.id.uuidString
@@ -77,3 +106,9 @@ extension TrackerCategoryStore {
     }
 }
 
+//MARK: - NSFetchedResultsControllerDelegate
+extension TrackerCategoryStore: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        delegate?.didUpdate()
+    }
+}

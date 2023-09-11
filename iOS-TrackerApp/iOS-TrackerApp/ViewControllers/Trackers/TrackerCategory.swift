@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct TrackerCategory {
+struct TrackerCategory: Equatable {
     let id: UUID
     let label: String
     
