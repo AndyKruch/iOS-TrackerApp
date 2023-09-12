@@ -52,7 +52,7 @@ final class TrackerCell: UICollectionViewCell {
     private lazy var addDayButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(systemName: "plus"), for: .normal)
-        button.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        button.tintColor = .WhiteDay
         button.layer.cornerRadius = 17
         button.addTarget(self, action: #selector(didTapAddDayButton), for: .touchUpInside)
         return button

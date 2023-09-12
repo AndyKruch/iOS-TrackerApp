@@ -374,9 +374,10 @@ extension TrackerFormViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let categoriesViewController = CategoriesViewController(selectedCategory: category)
-            categoriesViewController.delegate = self
-            let navigationController = UINavigationController(rootViewController: categoriesViewController)
+            let SetCategoriesViewController = SetCategoriesViewController(selectedCategory: category)
+            SetCategoriesViewController.delegate = self
+            let navigationController = UINavigationController(rootViewController: SetCategoriesViewController)
+            navigationController.isModalInPresentation = true
             present(navigationController, animated: true)
         case 1:
             guard let schedule = data.schedule else { return }
@@ -393,8 +394,8 @@ extension TrackerFormViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - CategoriesViewControllerDelegate
- extension TrackerFormViewController: CategoriesViewControllerDelegate {
+// MARK: - SetCategoriesViewControllerDelegate
+ extension TrackerFormViewController: SetCategoriesViewControllerDelegate {
      func didConfirm(_ category: TrackerCategory) {
          self.category = category
          parametersTableView.reloadData()
