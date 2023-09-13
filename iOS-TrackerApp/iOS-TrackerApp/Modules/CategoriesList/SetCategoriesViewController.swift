@@ -170,11 +170,7 @@ extension SetCategoriesViewController: UITableViewDelegate {
 // MARK: - CategoriesViewModelDelegate
 extension SetCategoriesViewController: CategoriesViewModelDelegate {
     func didUpdateCategories() {
-        if viewModel.categories.isEmpty {
-            starCombined.isHidden = false
-        } else {
-            starCombined.isHidden = true
-        }
+        starCombined.isHidden = !viewModel.categories.isEmpty
         categoriesView.reloadData()
     }
     

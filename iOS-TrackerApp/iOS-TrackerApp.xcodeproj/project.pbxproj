@@ -161,16 +161,17 @@
 			path = Trackers;
 			sourceTree = "<group>";
 		};
-		310FE7FD2A77AD3900753F08 /* ViewControllers */ = {
+		310FE7FD2A77AD3900753F08 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				315F1A4A2AADDD74002EA823 /* CategoriesList */,
 				315F1A452AADD855002EA823 /* Onboarding */,
 				3196F5312A9CEA1A00A2A3F2 /* TabBar */,
 				310494A12A8A5B55003E536C /* Statistics */,
 				310494A02A8A51E2003E536C /* Scheduler */,
 				310FE7FB2A77ACAA00753F08 /* Trackers */,
 			);
-			path = ViewControllers;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		315F1A452AADD855002EA823 /* Onboarding */ = {
@@ -182,7 +183,7 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		315F1A4A2AADDD74002EA823 /* Categories (MVVM) */ = {
+		315F1A4A2AADDD74002EA823 /* CategoriesList */ = {
 			isa = PBXGroup;
 			children = (
 				315F1A4B2AADDDFB002EA823 /* CategoriesViewModel.swift */,
@@ -190,7 +191,7 @@
 				315F1A4F2AADDEC4002EA823 /* CategoriesViewController.swift */,
 				315F1A512AAF61BA002EA823 /* SetCategoriesViewController.swift */,
 			);
-			path = "Categories (MVVM)";
+			path = CategoriesList;
 			sourceTree = "<group>";
 		};
 		3196F52A2A9CD5B200A2A3F2 /* CoreData */ = {
@@ -232,9 +233,8 @@
 		31D6BF502A72D9D1001BFEE8 /* iOS-TrackerApp */ = {
 			isa = PBXGroup;
 			children = (
-				315F1A4A2AADDD74002EA823 /* Categories (MVVM) */,
 				3196F52A2A9CD5B200A2A3F2 /* CoreData */,
-				310FE7FD2A77AD3900753F08 /* ViewControllers */,
+				310FE7FD2A77AD3900753F08 /* Modules */,
 				310FE7FA2A77AC9C00753F08 /* Helpers */,
 				310FE7F92A77AC6A00753F08 /* Extensions */,
 				31D6BF512A72D9D1001BFEE8 /* AppDelegate.swift */,
