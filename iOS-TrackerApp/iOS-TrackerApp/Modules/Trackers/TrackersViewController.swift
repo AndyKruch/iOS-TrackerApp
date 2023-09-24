@@ -31,7 +31,7 @@ final class TrackersViewController: UIViewController {
         datePicker.datePickerMode = .date
         datePicker.maximumDate = Date()
         datePicker.preferredDatePickerStyle = .compact
-        datePicker.locale = Locale(identifier: "ru_RU")
+        datePicker.locale = Locale.current
         datePicker.calendar = Calendar(identifier: .iso8601)
         datePicker.addTarget(self, action: #selector(didChangedDatePicker), for: .valueChanged)
         return datePicker
@@ -39,7 +39,7 @@ final class TrackersViewController: UIViewController {
     
     private lazy var searchBar: UISearchBar = {
         let view = UISearchBar()
-        view.placeholder = "Поиск"
+        view.placeholder = NSLocalizedString("TrackersViewController.search", comment: "")
         view.searchBarStyle = .minimal
         view.delegate = self
         return view
@@ -62,7 +62,7 @@ final class TrackersViewController: UIViewController {
     
     private lazy var filterButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle("Фильтры", for: .normal)
+        button.setTitle(NSLocalizedString("TrackersViewController.filters", comment: ""), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         button.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         button.layer.cornerRadius = 16
@@ -94,13 +94,13 @@ final class TrackersViewController: UIViewController {
         configureViews()
         configureConstraints()
         trackerLabel.configureLabel(
-            text: "Трекеры",
+            text: NSLocalizedString("TrackersViewController.title", comment: ""),
             addToView: view,
             ofSize: 34,
             weight: .bold
         )
-        mainSpacePlaceholderStack.configurePlaceholderStack(imageName: "StarIcon", text: "Что будем отслеживать?")
-        searchSpacePlaceholderStack.configurePlaceholderStack(imageName: "EmptyTracker", text: "Ничего не найдено")
+        mainSpacePlaceholderStack.configurePlaceholderStack(imageName: "StarIcon", text: NSLocalizedString("TrackersViewController.whatWeWillTrace", comment: ""))
+        searchSpacePlaceholderStack.configurePlaceholderStack(imageName: "EmptyTracker", text: NSLocalizedString("TrackersViewController.nothingFound", comment: ""))
         checkMainPlaceholderVisability()
         checkPlaceholderVisabilityAfterSearch()
         
