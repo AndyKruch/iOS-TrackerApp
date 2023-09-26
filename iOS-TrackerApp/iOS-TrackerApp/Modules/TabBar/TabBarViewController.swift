@@ -24,6 +24,8 @@ class TabBarViewController: UITabBarController {
         
         let trackersViewController = TrackersViewController()
         let statisticViewController = StatisticViewController()
+        let statisticViewModel = StatisticViewModel()
+        statisticViewController.statisticViewModel = statisticViewModel
         
         trackersViewController.tabBarItem = UITabBarItem(
             title: NSLocalizedString("TrackersViewController.title", comment: ""),
