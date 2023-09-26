@@ -23,8 +23,8 @@ final class TrackerCell: UICollectionViewCell {
     
     private let iconView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 12
-        view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
+        view.layer.borderColor = UIColor(red: 174 / 255, green: 175 / 255, blue: 180 / 255, alpha: 0.3).cgColor
+        view.layer.borderWidth = 1
         return view
     }()
     
@@ -90,10 +90,11 @@ final class TrackerCell: UICollectionViewCell {
     }
     
     // MARK: - Methods
-    func configure(with tracker: Tracker, days: Int, isCompleted: Bool) {
+    func configure(with tracker: Tracker, days: Int, isCompleted: Bool, interaction: UIInteraction) {
         self.tracker = tracker
         self.days = days
         cardView.backgroundColor = tracker.color
+        cardView.addInteraction(interaction)
         emoji.text = tracker.emoji
         trackerLabel.text = tracker.title
         addDayButton.backgroundColor = tracker.color
@@ -129,7 +130,8 @@ final class TrackerCell: UICollectionViewCell {
 // MARK: - Layout methods
 private extension TrackerCell {
     func configureViews() {
-        [cardView, iconView, emoji, trackerLabel, daysCountLabel, addDayButton].forEach { contentView.addSubview($0) }
+        [cardView, trackerLabel, daysCountLabel, addDayButton].forEach { contentView.addSubview($0) }
+        [iconView, emoji, trackerLabel].forEach { cardView.addSubview($0) }
         cardView.translatesAutoresizingMaskIntoConstraints = false
         iconView.translatesAutoresizingMaskIntoConstraints = false
         emoji.translatesAutoresizingMaskIntoConstraints = false

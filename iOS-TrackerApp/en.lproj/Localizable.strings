@@ -13,6 +13,9 @@
 "TrackersViewController.whatWeWillTrace" = "What will we track?";
 "TrackersViewController.filters" = "Filters";
 "TrackersViewController.nothingFound" = "Nothing found";
+"TrackersViewController.deleteTracker" = "Are you sure to delete the tracker?";
+"TrackersViewController.pin" = "Pin";
+"TrackersViewController.unPin" = "Unpin";
 
 /// StatisticViewController
 "StatisticViewController.title" = "Statistics";
@@ -40,6 +43,7 @@
 "TrackerFormViewController.scheduleString" = "Every day";
 "TrackerFormViewController.emoji" = "Emoji";
 "TrackerFormViewController.color" = "Color";
+"TrackerFormViewController.editHabit" = "Edit habit";
 
 //ScheduleViewController
 "TrackerFormViewController.ready" = "Ready";
@@ -75,3 +79,6 @@
 //CategoryFormViewController
 "CategoryFormViewController.textField" = "Enter category name";
 "CategoryFormViewController.configureView" = "New category";
+
+//TrackerStore
+"TrackerStore.pin" = "Pinned";
