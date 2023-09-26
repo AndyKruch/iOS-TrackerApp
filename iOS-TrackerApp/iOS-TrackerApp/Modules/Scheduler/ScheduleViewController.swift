@@ -26,6 +26,7 @@ final class ScheduleViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = .BlackDay
         button.setTitle(NSLocalizedString("TrackerFormViewController.ready", comment: "Ready"), for: .normal)
+        button.setTitleColor(.BlackNight, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         button.layer.cornerRadius = 16
         button.addTarget(self, action: #selector(didTapConfirmButton), for: .touchUpInside)

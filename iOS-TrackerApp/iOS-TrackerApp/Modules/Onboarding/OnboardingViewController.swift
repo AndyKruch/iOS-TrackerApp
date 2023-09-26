@@ -24,6 +24,7 @@ final class OnboardingViewController: UIPageViewController {
     private lazy var enterButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .BlackDay
+        button.setTitleColor(.BlackNight, for: .normal)
         button.setTitle(NSLocalizedString("OnboardingViewController.enterButton", comment: ""), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         button.layer.cornerRadius = 16

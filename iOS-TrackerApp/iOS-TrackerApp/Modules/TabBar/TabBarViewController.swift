@@ -14,13 +14,15 @@ class TabBarViewController: UITabBarController {
         
         UserDefaults.standard.set(true, forKey: "visitedBefore")
         
-        tabBar.tintColor = .Blue
-        tabBar.barTintColor = .Gray
-        tabBar.backgroundColor = .WhiteDay
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .WhiteDay
+        tabBar.standardAppearance = appearance
+        if #available(iOS 15.0, *) {
+            tabBar.scrollEdgeAppearance = appearance
+        }
         
-        tabBar.layer.borderColor = UIColor.LightGray.cgColor
-        tabBar.layer.borderWidth = 1
-        tabBar.layer.masksToBounds = true
+        tabBar.tintColor = .Blue
         
         let trackersViewController = TrackersViewController()
         let statisticViewController = StatisticViewController()

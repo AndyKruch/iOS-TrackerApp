@@ -25,7 +25,7 @@
 		312821D72A78F889008400BB /* TrackerCategoryNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821D62A78F889008400BB /* TrackerCategoryNames.swift */; };
 		312821D92A78F892008400BB /* TrackerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821D82A78F892008400BB /* TrackerTextField.swift */; };
 		312821DF2A78F8AB008400BB /* TrackerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821DC2A78F8AB008400BB /* TrackerFormViewController.swift */; };
-		312821E02A78F8AB008400BB /* ScheduleViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821DD2A78F8AB008400BB /* ScheduleViewControllerDelegate.swift */; };
+		312821E02A78F8AB008400BB /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821DD2A78F8AB008400BB /* ScheduleViewController.swift */; };
 		312821E12A78F8AB008400BB /* SetTrackersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821DE2A78F8AB008400BB /* SetTrackersViewController.swift */; };
 		312821E52A78F8BE008400BB /* ListCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821E22A78F8BE008400BB /* ListCells.swift */; };
 		312821E62A78F8BE008400BB /* TrackerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312821E32A78F8BE008400BB /* TrackerCell.swift */; };
@@ -72,7 +72,7 @@
 		312821D62A78F889008400BB /* TrackerCategoryNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerCategoryNames.swift; sourceTree = "<group>"; };
 		312821D82A78F892008400BB /* TrackerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerTextField.swift; sourceTree = "<group>"; };
 		312821DC2A78F8AB008400BB /* TrackerFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerFormViewController.swift; sourceTree = "<group>"; };
-		312821DD2A78F8AB008400BB /* ScheduleViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewControllerDelegate.swift; sourceTree = "<group>"; };
+		312821DD2A78F8AB008400BB /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		312821DE2A78F8AB008400BB /* SetTrackersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTrackersViewController.swift; sourceTree = "<group>"; };
 		312821E22A78F8BE008400BB /* ListCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCells.swift; sourceTree = "<group>"; };
 		312821E32A78F8BE008400BB /* TrackerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerCell.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		310494A02A8A51E2003E536C /* Scheduler */ = {
 			isa = PBXGroup;
 			children = (
-				312821DD2A78F8AB008400BB /* ScheduleViewControllerDelegate.swift */,
+				312821DD2A78F8AB008400BB /* ScheduleViewController.swift */,
 				310FE8062A77B59600753F08 /* Weekdays.swift */,
 				312821E42A78F8BE008400BB /* WeekdayCell.swift */,
 			);
@@ -343,7 +343,7 @@
 				3196F5332A9CF44B00A2A3F2 /* ColorMarshall.swift in Sources */,
 				315F1A502AADDEC4002EA823 /* CategoriesViewController.swift in Sources */,
 				310FE80E2A77BA2700753F08 /* UICollectionViewExtension.swift in Sources */,
-				312821E02A78F8AB008400BB /* ScheduleViewControllerDelegate.swift in Sources */,
+				312821E02A78F8AB008400BB /* ScheduleViewController.swift in Sources */,
 				3196F5292A9CD5AE00A2A3F2 /* Model.xcdatamodeld in Sources */,
 				3196F52C2A9CE86E00A2A3F2 /* TrackerStore.swift in Sources */,
 				310FE8032A77B54500753F08 /* TrackerCategory.swift in Sources */,
