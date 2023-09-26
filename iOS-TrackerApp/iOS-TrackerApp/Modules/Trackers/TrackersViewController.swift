@@ -27,7 +27,7 @@ final class TrackersViewController: UIViewController {
     private lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.backgroundColor = .WhiteDay
-        datePicker.tintColor = .blue
+        datePicker.tintColor = .Blue
         datePicker.datePickerMode = .date
         datePicker.maximumDate = Date()
         datePicker.preferredDatePickerStyle = .compact
@@ -77,6 +77,7 @@ final class TrackersViewController: UIViewController {
     private let trackerLabel = UILabel()
     private var currentDate = Date()
     private let params = UICollectionView.GeometricParams(cellCount: 2, leftInset: 16, rightInset: 16, topInset: 8, bottomInset: 16, height: 148, cellSpacing: 10)
+    private var trackerStore: TrackerStoreProtocol
     private var categories = [TrackerCategory]()
     private var completedTrackers: Set<TrackerRecord> = []
     private var searchText = "" {
@@ -84,12 +85,21 @@ final class TrackersViewController: UIViewController {
             try? trackerStore.loadFilteredTrackers(date: currentDate, searchString: searchText)
         }
     }
-    private let trackerStore = TrackerStore()
+    
     private let trackerCategoryStore = TrackerCategoryStore()
     private let trackerRecordStore = TrackerRecordStore()
     private var editingTracker: Tracker?
     
     // MARK: - Lifecycle
+    init(trackerStore: TrackerStoreProtocol) {
+        self.trackerStore = trackerStore
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) is not supported")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -247,7 +257,7 @@ extension TrackersViewController: UIContextMenuInteractionDelegate {
                     let cancelAction = UIAlertAction(title: NSLocalizedString("TrackerFormViewController.cancel", comment: "Cancel"), style: .cancel)
                     let deleteAction = UIAlertAction(title: NSLocalizedString("SetCategoriesViewController.delete", comment: "Delete"), style: .destructive) { [weak self] _ in
                         guard let self else { return }
-                        try? self.trackerStore.deleteTracker(tracker)
+                        try? trackerStore.deleteTracker(tracker)
                     }
                     
                     alert.addAction(deleteAction)

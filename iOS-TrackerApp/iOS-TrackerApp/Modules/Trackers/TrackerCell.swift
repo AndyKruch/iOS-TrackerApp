@@ -13,18 +13,20 @@ protocol TrackerCellDelegate: AnyObject {
 }
 
 final class TrackerCell: UICollectionViewCell {
-    // MARK: - Layout elements
     
+    // MARK: - UI propertiess
     private let cardView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 16
+        view.layer.borderColor = UIColor(red: 174 / 255, green: 175 / 255, blue: 180 / 255, alpha: 0.3).cgColor
+        view.layer.borderWidth = 1
         return view
     }()
     
     private let iconView: UIView = {
         let view = UIView()
-        view.layer.borderColor = UIColor(red: 174 / 255, green: 175 / 255, blue: 180 / 255, alpha: 0.3).cgColor
-        view.layer.borderWidth = 1
+        view.layer.cornerRadius = 12
+        view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
         return view
     }()
     
@@ -72,7 +74,6 @@ final class TrackerCell: UICollectionViewCell {
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         configureViews()
         configureConstraints()
     }

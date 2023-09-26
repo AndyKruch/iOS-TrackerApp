@@ -14,6 +14,7 @@ final class CategoryCell: UITableViewCell {
     private let label: UILabel = {
         let label = UILabel()
         label.textColor = .BlackDay
+        label.tintColor = .Blue
         label.font = UIFont.systemFont(ofSize: 17)
         return label
     }()
@@ -21,6 +22,7 @@ final class CategoryCell: UITableViewCell {
     private let checkmarkImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "checkmark")
+        imageView.tintColor = .Blue
         return imageView
     }()
     
