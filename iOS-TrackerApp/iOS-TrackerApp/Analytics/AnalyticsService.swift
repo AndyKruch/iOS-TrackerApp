@@ -10,7 +10,7 @@ import YandexMobileMetrica
 
 struct AnalyticsService {
     static func activate() {
-        guard let configuration = YMMYandexMetricaConfiguration(apiKey: "f21f5c7f-e1e1-439a-b113-24c1cea87aad") else { return }
+        guard let configuration = YMMYandexMetricaConfiguration(apiKey: "14db8363-dbc9-47f7-9220-e329687e87b0") else { return }
         
         YMMYandexMetrica.activate(with: configuration)
     }

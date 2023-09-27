@@ -67,6 +67,7 @@ final class TrackersViewController: UIViewController {
         button.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         button.layer.cornerRadius = 16
         button.backgroundColor = .Blue
+        button.addTarget(self, action: #selector(didTapFilterButton), for: .touchUpInside)
         return button
     }()
     
@@ -89,6 +90,7 @@ final class TrackersViewController: UIViewController {
     private let trackerCategoryStore = TrackerCategoryStore()
     private let trackerRecordStore = TrackerRecordStore()
     private var editingTracker: Tracker?
+    private let analyticsService = AnalyticsService()
     
     // MARK: - Lifecycle
     init(trackerStore: TrackerStoreProtocol) {
@@ -124,6 +126,16 @@ final class TrackersViewController: UIViewController {
         checkNumberOfTrackers()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        analyticsService.report(event: "open", params: ["screen": "Main"])
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        analyticsService.report(event: "close", params: ["screen": "Main"])
+    }
+    
     // MARK: - Actions
     @objc
     private func didTapPlusButton() {
@@ -132,7 +144,12 @@ final class TrackersViewController: UIViewController {
         setTrackersViewController.delegate = self
         let navigationController = UINavigationController(rootViewController: setTrackersViewController)
         present(navigationController, animated: true)
-        
+        analyticsService.report(event: "click", params: ["screen": "Main", "item": "add_track"])
+    }
+    
+    @objc
+    private func didTapFilterButton() {
+        analyticsService.report(event: "click", params: ["screen": "Main","item": "filter"])
     }
     
     @objc
@@ -247,6 +264,7 @@ extension TrackersViewController: UIContextMenuInteractionDelegate {
                     let type: SetTrackersViewController.TrackerType = tracker.schedule != nil ? .habit : .irregularEvent
                     self?.editingTracker = tracker
                     self?.presentFormController(with: tracker.data, of: type, setAction: .edit)
+                    self?.analyticsService.report(event: "click", params: ["screen": "Main","item": "filter"])
                 },
                 UIAction(title: NSLocalizedString("SetCategoriesViewController.delete", comment: "Delete"), attributes: .destructive) { [weak self] _ in
                     let alert = UIAlertController(
@@ -258,6 +276,8 @@ extension TrackersViewController: UIContextMenuInteractionDelegate {
                     let deleteAction = UIAlertAction(title: NSLocalizedString("SetCategoriesViewController.delete", comment: "Delete"), style: .destructive) { [weak self] _ in
                         guard let self else { return }
                         try? trackerStore.deleteTracker(tracker)
+                        try? trackerStore.deleteTracker(tracker)
+                        analyticsService.report(event: "click", params: ["screen": "Main","item": "filter"])
                     }
                     
                     alert.addAction(deleteAction)
@@ -411,7 +431,7 @@ extension TrackersViewController: UISearchBarDelegate {
 }
 // MARK: - TrackerCellDelegate
 extension TrackersViewController: TrackerCellDelegate {
-    func didTapCompleteButton(of cell: TrackerCell, with tracker: Tracker) {
+    func didTapAddDayButton(of cell: TrackerCell, with tracker: Tracker) {
         if let recordToRemove = completedTrackers.first(where: { $0.date == currentDate && $0.trackerId == tracker.id }) {
             try? trackerRecordStore.remove(recordToRemove)
             cell.switchAddDayButton(to: false)
