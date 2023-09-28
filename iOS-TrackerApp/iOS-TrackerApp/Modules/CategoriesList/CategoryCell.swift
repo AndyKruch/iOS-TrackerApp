@@ -27,7 +27,7 @@ final class CategoryCell: UITableViewCell {
     }()
     
     // MARK: - Properties
-    static let identifier = "WeekdayCell"
+    static let identifier = "CategoryCell"
     
     // MARK: - Lifecycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
