@@ -1,0 +1,84 @@
+/* 
+  Localizable.strings
+  iOS-TrackerApp
+
+  Created by Andy Kruch on 24.09.23.
+  
+*/
+
+// TrackersViewController
+"TrackersViewController.title" = "Трекеры";
+"TrackersViewController.search" = "Поиск";
+"TrackersViewController.whatWeWillTrace" = "Что будем отслеживать?";
+"TrackersViewController.filters" = "Фильтры";
+"TrackersViewController.nothingFound" = "Ничего не найдено";
+"TrackersViewController.deleteTracker" = "Уверены что хотите удалить трекер?";
+"TrackersViewController.pin" = "Закрепить";
+"TrackersViewController.unPin" = "Открепить";
+
+// StatisticViewController
+"StatisticViewController.title" = "Статистика";
+"StatisticViewController.nothingToAnalyze" = "Анализировать пока нечего";
+
+//OnboardingViewController
+"OnboardingViewController.firstPage" = "Отслеживайте только то, что хотите";
+"OnboardingViewController.secondPage" = "Даже если это не литры воды и йога";
+"OnboardingViewController.enterButton" = "Вот это технологии!";
+
+//SetTrackersViewController
+"SetTrackersViewController.habitButton" = "Привычка";
+"SetTrackersViewController.irregularEventButton" = "Нерегулярное событие";
+"SetTrackersViewController.parameter1" = "Категория";
+"SetTrackersViewController.parameter2" = "Расписание";
+"SetTrackersViewController.didTapHabitButton" = "Новая привычка";
+"SetTrackersViewController.didTapIrregularEventButton" = "Новое нерегулярное событие";
+"SetTrackersViewController.configureViews" = "Создание трекера";
+
+//TrackerFormViewController
+"TrackerFormViewController.textField" = "Введите название трекера";
+"TrackerFormViewController.validationMessage" = "Ограничение 38 символов";
+"TrackerFormViewController.cancel" = "Отменить";
+"TrackerFormViewController.confirmButton" = "Создать";
+"TrackerFormViewController.scheduleString" = "Каждый день";
+"TrackerFormViewController.emoji" = "Эмоджи";
+"TrackerFormViewController.color" = "Цвет";
+"TrackerFormViewController.editHabit" = "Редактирование привычки";
+
+//ScheduleViewController
+"TrackerFormViewController.ready" = "Готово";
+
+"monday" = "Понедельник";
+"tuesday" = "Вторник";
+"wednesday" = "Среда";
+"thursday" = "Четверг";
+"friday" = "Пятница";
+"saturday" = "Суббота";
+"sunday" = "Воскресенье";
+"everyDay" = "Каждый день";
+
+"mon" = "Пн";
+"tue" = "Вт";
+"wed" = "Ср";
+"thu" = "Чт";
+"fri" = "Пт";
+"sat" = "Сб";
+"sun" = "Вс";
+
+"day" = "день";
+
+//SetCategoriesViewController
+"SetCategoriesViewController.addButton" = "Добавить категорию";
+"SetCategoriesViewController.starCombined" = "Привычки и события можно \n объединить по смыслу";
+"SetCategoriesViewController.deleteCategory" = "Эта категория точно не нужна?";
+"SetCategoriesViewController.delete" = "Удалить";
+"SetCategoriesViewController.edit" = "Редактировать";
+
+//CategoryFormViewController
+"CategoryFormViewController.textField" = "Введите название категории";
+"CategoryFormViewController.configureView" = "Новая категория";
+
+//TrackerStore
+"TrackerStore.pin" = "Закрепленные";
+
+//StatisticViewController
+"StatisticViewController.finishedTrackers" = "Трекеров завершено";

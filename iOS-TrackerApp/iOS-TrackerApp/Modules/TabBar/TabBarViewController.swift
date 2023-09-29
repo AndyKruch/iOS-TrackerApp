@@ -14,24 +14,29 @@ class TabBarViewController: UITabBarController {
         
         UserDefaults.standard.set(true, forKey: "visitedBefore")
         
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .WhiteDay
+        tabBar.standardAppearance = appearance
+        if #available(iOS 15.0, *) {
+            tabBar.scrollEdgeAppearance = appearance
+        }
+        
         tabBar.tintColor = .Blue
-        tabBar.barTintColor = .Gray
-        tabBar.backgroundColor = .WhiteDay
         
-        tabBar.layer.borderColor = UIColor.LightGray.cgColor
-        tabBar.layer.borderWidth = 1
-        tabBar.layer.masksToBounds = true
-        
-        let trackersViewController = TrackersViewController()
+        let trackerStore = TrackerStore()
+        let trackersViewController = TrackersViewController(trackerStore: trackerStore)
         let statisticViewController = StatisticViewController()
+        let statisticViewModel = StatisticViewModel()
+        statisticViewController.statisticViewModel = statisticViewModel
         
         trackersViewController.tabBarItem = UITabBarItem(
-            title: "Трекеры",
+            title: NSLocalizedString("TrackersViewController.title", comment: ""),
             image: UIImage(named: "Trackers_TabBarIcon_on"),
             selectedImage: nil
         )
         statisticViewController.tabBarItem = UITabBarItem(
-            title: "Статистика",
+            title: NSLocalizedString("StatisticViewController.title", comment: ""),
             image: UIImage(named: "Statistics_TabBarIcon_off"),
             selectedImage: nil
         )

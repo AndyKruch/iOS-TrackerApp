@@ -9,15 +9,17 @@
 import UIKit
 
 protocol TrackerCellDelegate: AnyObject {
-    func didTapCompleteButton(of cell: TrackerCell, with tracker: Tracker)
+    func didTapAddDayButton(of cell: TrackerCell, with tracker: Tracker)
 }
 
 final class TrackerCell: UICollectionViewCell {
-    // MARK: - Layout elements
     
+    // MARK: - UI propertiess
     private let cardView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 16
+        view.layer.borderColor = UIColor(red: 174 / 255, green: 175 / 255, blue: 180 / 255, alpha: 0.3).cgColor
+        view.layer.borderWidth = 1
         return view
     }()
     
@@ -64,14 +66,16 @@ final class TrackerCell: UICollectionViewCell {
     private var tracker: Tracker?
     private var days = 0 {
         willSet {
-            daysCountLabel.text = "\(newValue.days())"
+            daysCountLabel.text = String.localizedStringWithFormat(
+                NSLocalizedString("amountOfDays", comment: ""), newValue)
         }
     }
+    
+    private let analyticsService = AnalyticsService()
     
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         configureViews()
         configureConstraints()
     }
@@ -89,10 +93,11 @@ final class TrackerCell: UICollectionViewCell {
     }
     
     // MARK: - Methods
-    func configure(with tracker: Tracker, days: Int, isCompleted: Bool) {
+    func configure(with tracker: Tracker, days: Int, isCompleted: Bool, interaction: UIInteraction) {
         self.tracker = tracker
         self.days = days
         cardView.backgroundColor = tracker.color
+        cardView.addInteraction(interaction)
         emoji.text = tracker.emoji
         trackerLabel.text = tracker.title
         addDayButton.backgroundColor = tracker.color
@@ -120,15 +125,17 @@ final class TrackerCell: UICollectionViewCell {
     // MARK: - Actions
     @objc
     private func didTapAddDayButton() {
+        analyticsService.report(event: "click", params: ["screen": "Main","item": "track"])
         guard let tracker else { return }
-        delegate?.didTapCompleteButton(of: self, with: tracker)
+        delegate?.didTapAddDayButton(of: self, with: tracker)
     }
 }
 
 // MARK: - Layout methods
 private extension TrackerCell {
     func configureViews() {
-        [cardView, iconView, emoji, trackerLabel, daysCountLabel, addDayButton].forEach { contentView.addSubview($0) }
+        [cardView, trackerLabel, daysCountLabel, addDayButton].forEach { contentView.addSubview($0) }
+        [iconView, emoji, trackerLabel].forEach { cardView.addSubview($0) }
         cardView.translatesAutoresizingMaskIntoConstraints = false
         iconView.translatesAutoresizingMaskIntoConstraints = false
         emoji.translatesAutoresizingMaskIntoConstraints = false

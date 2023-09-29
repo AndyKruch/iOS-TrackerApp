@@ -7,24 +7,38 @@
 
 import Foundation
 
+import Foundation
+
 enum WeekDay: String, CaseIterable, Comparable {
-    case monday = "Понедельник"
-    case tuesday = "Вторник"
-    case wednesday = "Среда"
-    case thurshday = "Четверг"
-    case friday = "Пятница"
-    case saturday = "Суббота"
-    case sunday = "Воскресенье"
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
+    case sunday
     
     var shortForm: String {
         switch self {
-        case .monday: return "Пн"
-        case .tuesday: return "Вт"
-        case .wednesday: return "Ср"
-        case .thurshday: return "Чт"
-        case .friday: return "Пт"
-        case .saturday: return "Сб"
-        case .sunday: return "Вс"
+        case .monday: return "mon".localized
+        case .tuesday: return "tue".localized
+        case .wednesday: return "wed".localized
+        case .thursday: return "thu".localized
+        case .friday: return "fri".localized
+        case .saturday: return "sat".localized
+        case .sunday: return "sun".localized
+        }
+    }
+    
+    var fullName: String {
+        switch self {
+        case .monday: return "monday".localized
+        case .tuesday: return "tuesday".localized
+        case .wednesday: return "wednesday".localized
+        case .thursday: return "thursday".localized
+        case .friday: return "friday".localized
+        case .saturday: return "saturday".localized
+        case .sunday: return "sunday".localized
         }
     }
     
@@ -65,3 +79,8 @@ extension WeekDay {
     }
 }
 
+extension String {
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
+}

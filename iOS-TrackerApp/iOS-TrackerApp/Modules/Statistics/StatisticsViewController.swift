@@ -8,65 +8,89 @@
 import UIKit
 
 final class StatisticViewController: UIViewController {
-    
-    // MARK: - Layout elements
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Статистика"
-        label.font = UIFont.systemFont(ofSize: 34, weight: .bold)
-        return label
-    }()
-    
-    private let emptyImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "EmptyStat")
-        return imageView
-    }()
-    
-    private let emptyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-        label.text = "Анализировать пока нечего"
-        label.textColor = .BlackDay
-        return label
-    }()
-    
-    private let emptyStack: UIStackView = {
+    // MARK: - Properties
+    private let statisticLabel = UILabel()
+    private let mainSpacePlaceholderStack = UIStackView()
+    private let statisticsStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.alignment = .center
-        stack.spacing = 8
         return stack
     }()
+    
+    // MARK: - Properties
+    var statisticViewModel: StatisticViewModel?
+    private let trackerRecordStore = TrackerRecordStore()
+    private let completedTrackersView = StatisticView(name: NSLocalizedString("StatisticViewController.finishedTrackers", comment: "Finished trackers"))
+    private let trackerStore = TrackerStore()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .WhiteDay
+        statisticLabel.configureLabel(
+            text: (NSLocalizedString("StatisticViewController.title", comment: "")),
+            addToView: view,
+            ofSize: 34,
+            weight: .bold
+        )
         configureViews()
         configureConstraints()
+        mainSpacePlaceholderStack.configurePlaceholderStack(imageName: "EmptyStat", text: (NSLocalizedString("StatisticViewController.nothingToAnalyze", comment: "")))
+        statisticViewModel?.onTrackersChange = { [weak self] trackers in
+            guard let self else { return }
+            self.checkContent(with: trackers)
+            self.setupCompletedTrackersBlock(with: trackers.count)
+            checkMainPlaceholderVisability()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        statisticViewModel?.viewWillAppear()
+    }
+    
+    // MARK: - Methods
+    private func setupCompletedTrackersBlock(with count: Int) {
+        completedTrackersView.setNumber(count)
+    }
+    
+    private func checkMainPlaceholderVisability() {
+        let isHidden = trackerStore.numberOfTrackers == 0
+        mainSpacePlaceholderStack.isHidden = !isHidden
+    }
+    
+    private func checkContent(with trackers: [TrackerRecord]) {
+        if trackers.isEmpty {
+            statisticsStack.isHidden = true
+        } else {
+            statisticsStack.isHidden = false
+        }
+        
     }
 }
 
+// MARK: - EXTENSIONS
 // MARK: - Layout methods
 private extension StatisticViewController {
     func configureViews() {
-        view.backgroundColor = .WhiteDay
-        [nameLabel, emptyStack].forEach { view.addSubview($0) }
-        emptyStack.addArrangedSubview(emptyImageView)
-        emptyStack.addArrangedSubview(emptyLabel)
-        
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        emptyImageView.translatesAutoresizingMaskIntoConstraints = false
-        emptyLabel.translatesAutoresizingMaskIntoConstraints = false
-        emptyStack.translatesAutoresizingMaskIntoConstraints = false
+        [statisticLabel, mainSpacePlaceholderStack, statisticsStack].forEach { view.addSubview($0) }
+        statisticsStack.addArrangedSubview(completedTrackersView)
+        statisticLabel.translatesAutoresizingMaskIntoConstraints = false
+        mainSpacePlaceholderStack.translatesAutoresizingMaskIntoConstraints = false
+        statisticsStack.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func configureConstraints() {
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 52),
-            nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            emptyStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emptyStack.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        statisticLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+        statisticLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height * 0.1083),
+        mainSpacePlaceholderStack.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height * 0.495),
+        mainSpacePlaceholderStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        statisticsStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+        statisticsStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+        statisticsStack.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
         ])
     }
 }
+
+
